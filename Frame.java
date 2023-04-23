@@ -16,7 +16,7 @@ public class Frame extends JFrame implements ActionListener, KeyListener
 	int count=0;
 	int WPM;
 	
-	double start;
+	double start; 
 	double end; 
 	double elapsed;
 	double seconds;
@@ -115,23 +115,12 @@ public class Frame extends JFrame implements ActionListener, KeyListener
 		}
 		if(ended)
 		{
-			if(WPM<=40)
-				message="You are an Average Typist";
-			else if(WPM>40 && WPM<=60)
-				message="You are a Good Typist";
-			else if(WPM>60 && WPM<=100)
-				message="You are an Excellent Typist";
-			else
-				message="You are an Elite Typist";
-			
 			FontMetrics metrics=getFontMetrics(g.getFont());
 			g.setColor(Color.BLUE);
 			g.drawString("Typing Test Completed!", (SCREEN_WIDTH-metrics.stringWidth("Typing Test Completed!"))/2, g.getFont().getSize()*6);
 			
 			g.setColor(Color.BLACK);
-			g.drawString("Typing Speed: "+WPM+" Words Per Minute", (SCREEN_WIDTH-metrics.stringWidth("Typing Speed: "+WPM+" Words Per Minute"))/2, g.getFont().getSize()*9);
-			g.drawString(message, (SCREEN_WIDTH-metrics.stringWidth(message))/2, g.getFont().getSize()*11);
-			
+			g.drawString("Typing Speed: "+WPM+" Words Per Minute", (SCREEN_WIDTH-metrics.stringWidth("Typing Speed: "+WPM+" Words Per Minute"))/2, g.getFont().getSize()*9);			
 			timer.stop();
 			ended=false; 
 		}
